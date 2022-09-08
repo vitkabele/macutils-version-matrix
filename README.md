@@ -1,14 +1,15 @@
 # macOS utils version matrix
 
-This repository collects the versions of various system provided utilities on
-the macOS system.
+This repository collects the versions/compilation parameters etc. of various
+system utilities provided with the macOS system.
 
-The repository structure should be as following:
+The repository structure is following:
 
 ```
 |- README.md
 |- sample.sh
 |- MacBookPro13,2
+|	|- hardware.version
 |	|- 12.5.1
 |	|	|- bash.version
 |	|	|- ssh.version
