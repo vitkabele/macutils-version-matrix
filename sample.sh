@@ -12,7 +12,7 @@ mkdir -p "$DIRNAME"
 echo csh bash ksh sh zsh \
 		| xargs -n1 -I% sh -c "/bin/% --version > $DIRNAME/%.version 2>&1"
 
-echo vim make m4 screen bison flex python3 \
+echo vim make m4 screen bison flex python3 rsync \
 		| xargs -n1 -I% sh -c "test -x /usr/bin/% && /usr/bin/% --version >$DIRNAME/%.version 2>&1"
 
 # Other commands with non-standard options are here
