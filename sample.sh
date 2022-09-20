@@ -12,7 +12,7 @@ mkdir -p "$DIRNAME"
 echo csh bash ksh sh zsh \
 		| xargs -n1 -I% sh -c "/bin/% --version > $DIRNAME/%.version 2>&1"
 
-echo vim make m4 screen bison flex python3 rsync \
+echo vim make m4 screen bison flex python python3 rsync \
 		| xargs -n1 -I% sh -c "test -x /usr/bin/% && /usr/bin/% --version >$DIRNAME/%.version 2>&1"
 
 # Other commands with non-standard options are here
@@ -30,4 +30,6 @@ system_profiler SPHardwareDataType | grep -e Version > "firmware.version"
 /usr/bin/openssl version > "openssl.version"
 /usr/bin/openssl ciphers > "openssl.ciphers"
 
-/usr/bin/python3 -m sysconfig | grep -v userbase > python3.sysconfig
+test -x /usr/bin/python3 && /usr/bin/python3 -m sysconfig | grep -v userbase > python3.sysconfig
+
+test -x /usr/bin/python && /usr/bin/python -m sysconfig | grep -v userbase > python.sysconfig
